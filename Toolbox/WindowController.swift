@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  WindowController.swift
 //  Toolbox
 //
 //  Created by Purkylin King on 2016/9/30.
@@ -8,31 +8,29 @@
 
 import Cocoa
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class WindowController: NSWindowController, NSMenuDelegate {
     var statusItem: NSStatusItem! //  一定要强引用
-    var windowCtrl:NSWindowController!
-    var mainController: NSWindowController!
+
+    override func windowDidLoad() {
+        super.windowDidLoad()
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-
-        configMenu()
-        NSApplication.shared().mainWindow?.orderOut(nil)
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
     
     func configMenu() {
         let menu = NSMenu()
-//        menu.delegate = self
+        menu.delegate = self
+        
         menu.addItem(NSMenuItem(title: "生成二维码", action: #selector(qrMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "识别二维码", action: #selector(detectMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "URL编码", action: #selector(encodeMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "退出", action: #selector(quitMenuItemClicked(sender:)), keyEquivalent: ""))
+        
+        for item in menu.items {
+            item.target = self
+        }
+        
         
         let statusItem = NSStatusBar.system().statusItem(withLength: -1)
         statusItem.menu = menu
@@ -41,16 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func encodeMenuItemClicked(sender: AnyObject) {
-//        let windowController = NSWindowController()
-//        let storyboard = NSStoryboard(name: "Main",bundle: nil)
-//        let controller: NSViewController = storyboard.instantiateController(withIdentifier: "encode") as! NSViewController
-//        windowController.contentViewController = controller
-//        windowController.showWindow(nil)
-//        self.mainController = windowController
-//        NSApplication.shared().mainWindow = windowController.window
-//        myWindow?.makeKeyAndOrderFront(self)
+        let vc = self.storyboard!.instantiateController(withIdentifier: "encode")
+        self.contentViewController?.presentViewControllerAsModalWindow(vc as! NSViewController)
     }
-    
+
     func qrMenuItemClicked(sender: AnyObject) {
         
     }
@@ -67,8 +59,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
-
-    
+    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        return true
+    }
 
 }
-
