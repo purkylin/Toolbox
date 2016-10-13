@@ -1,0 +1,19 @@
+PODS:
+  - PFAboutWindow (1.1.1)
+
+DEPENDENCIES:
+  - PFAboutWindow (from `https://github.com/perfaram/PFAboutWindow.git`)
+
+EXTERNAL SOURCES:
+  PFAboutWindow:
+    :git: https://github.com/perfaram/PFAboutWindow.git
+
+CHECKOUT OPTIONS:
+  PFAboutWindow:
+    :commit: b49143f396380a7977362e88498cd1fc5d530af6
+    :git: https://github.com/perfaram/PFAboutWindow.git
+
+SPEC CHECKSUMS:
+  PFAboutWindow: d0187db1ff90fa3bc151cc82dcb6f06f62b42cf0
+
+COCOAPODS: 0.39.0
