@@ -39,7 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let statusItem = NSStatusBar.system().statusItem(withLength: -1)
         statusItem.menu = menu
-        statusItem.title = "Toolbox"
+//        statusItem.title = "Toolbox"
+        statusItem.image = NSImage(named: "status")
         self.statusItem = statusItem
     }
     

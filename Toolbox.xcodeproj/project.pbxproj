@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		311E78141DACDEDD00A3E646 /* terminal.script in Resources */ = {isa = PBXBuildFile; fileRef = 311E78131DACDD5C00A3E646 /* terminal.script */; };
 		312A33DB1DAA851D00FAEBBE /* DetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */; };
+		3178CE011DB33E6A00AFA2BA /* DrapImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */; };
 		319B033A1D9DDAB90006437A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B03391D9DDAB90006437A /* AppDelegate.swift */; };
 		319B033C1D9DDAB90006437A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B033B1D9DDAB90006437A /* ViewController.swift */; };
 		319B033E1D9DDAB90006437A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319B033D1D9DDAB90006437A /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		311E78131DACDD5C00A3E646 /* terminal.script */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = terminal.script; sourceTree = "<group>"; };
 		312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectViewController.swift; sourceTree = "<group>"; };
+		3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrapImageView.swift; sourceTree = "<group>"; };
 		319B03361D9DDAB90006437A /* Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toolbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319B03391D9DDAB90006437A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319B033B1D9DDAB90006437A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				31DBAC101DA8EBCA001B162C /* GCDAsyncSocket.h */,
 				31DBAC111DA8EBCA001B162C /* GCDAsyncSocket.m */,
 				319B033F1D9DDAB90006437A /* Main.storyboard */,
+				3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */,
 				312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */,
 				319B034D1D9F48440006437A /* UrlEncodeViewController.swift */,
 				319B034B1D9E17450006437A /* BarcodeViewController.swift */,
@@ -235,6 +238,7 @@
 				31DBAC121DA8EBCA001B162C /* GCDAsyncSocket.m in Sources */,
 				319B033C1D9DDAB90006437A /* ViewController.swift in Sources */,
 				319B034C1D9E17450006437A /* BarcodeViewController.swift in Sources */,
+				3178CE011DB33E6A00AFA2BA /* DrapImageView.swift in Sources */,
 				312A33DB1DAA851D00FAEBBE /* DetectViewController.swift in Sources */,
 				319B034F1D9F48440006437A /* UrlEncodeViewController.swift in Sources */,
 				319B034A1D9DED1A0006437A /* WindowController.swift in Sources */,
@@ -357,6 +361,7 @@
 				DEVELOPMENT_TEAM = UJS236S7YF;
 				INFOPLIST_FILE = Toolbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.Toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Toolbox/Toolbox-Bridging-Header.h";
@@ -376,6 +381,7 @@
 				DEVELOPMENT_TEAM = UJS236S7YF;
 				INFOPLIST_FILE = Toolbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.Toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Toolbox/Toolbox-Bridging-Header.h";

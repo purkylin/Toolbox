@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="box content view" minToolsVersion="7.0"/>
@@ -785,7 +784,7 @@
                                             <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="umZ-wW-Zz2">
                                                 <rect key="frame" x="301" y="10" width="5" height="230"/>
                                             </box>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-Tx-fb7">
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-Tx-fb7" customClass="DragImageView" customModule="Toolbox" customModuleProvider="target">
                                                 <rect key="frame" x="309" y="-3" width="256" height="256"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mg2-Tx-fb7" secondAttribute="height" multiplier="1:1" id="GXR-td-5IK"/>
