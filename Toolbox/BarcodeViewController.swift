@@ -45,19 +45,6 @@ class BarcodeViewController: NSViewController, NSMenuDelegate {
         imageView.menu = menu
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        if historyPopUpButton.itemTitles.count != 0 {
-            return
-        }
-        
-        let defaults = UserDefaults.standard
-        if let items = defaults.value(forKey: "History") as? [String] {
-            historyPopUpButton.removeAllItems()
-            historyPopUpButton.addItems(withTitles: items)
-        }
-    }
-    
     @IBAction func btnCollapaseClicked(_ sender: AnyObject) {
         self.extendViewHidden = !self.extendViewHidden
     }
@@ -109,9 +96,6 @@ class BarcodeViewController: NSViewController, NSMenuDelegate {
         addHistoryItem(item: rawString)
         historyPopUpButton.removeAllItems()
         historyPopUpButton.addItems(withTitles: history)
-        
-        let defaults = UserDefaults.standard
-        defaults.set(history, forKey: "History")
     }
     
     func addHistoryItem(item: String) {

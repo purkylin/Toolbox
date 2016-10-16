@@ -701,9 +701,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="FuB-iT-90z" kind="show" id="EHy-rc-XIP"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTf-4O-0pF">
                                 <rect key="frame" x="193" y="77" width="81" height="32"/>
@@ -712,9 +709,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="8Li-pw-4vj" kind="show" id="rRl-0Y-IBJ"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-Ri-r8Z">
                                 <rect key="frame" x="305" y="77" width="81" height="32"/>
@@ -723,21 +717,36 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="dOK-EK-4VQ" kind="modal" id="5z0-Rv-lMn"/>
-                                </connections>
                             </button>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="70" y="466"/>
         </scene>
-        <!--二维码-->
+        <!--Window Controller-->
+        <scene sceneID="6kz-TB-J9W">
+            <objects>
+                <windowController storyboardIdentifier="generate_qr_window" id="yeG-do-eMk" sceneMemberID="viewController">
+                    <window key="window" title="生成二维码" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Apg-OA-C32">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="8Li-pw-4vj" kind="relationship" relationship="window.shadowedContentViewController" id="yfQ-AJ-MS6"/>
+                    </connections>
+                </windowController>
+                <customObject id="dhC-gC-d1S" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="241"/>
+        </scene>
+        <!--生成二维码-->
         <scene sceneID="FjN-Rn-X2U">
             <objects>
-                <viewController title="二维码" storyboardIdentifier="generate" id="8Li-pw-4vj" customClass="BarcodeViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="生成二维码" storyboardIdentifier="generate" id="8Li-pw-4vj" customClass="BarcodeViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="LQc-0Q-QnQ">
                         <rect key="frame" x="0.0" y="0.0" width="610" height="322"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -962,7 +971,25 @@
                     <font key="font" metaFont="smallSystem"/>
                 </levelIndicatorCell>
             </objects>
-            <point key="canvasLocation" x="707" y="619"/>
+            <point key="canvasLocation" x="1085" y="573"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="aOr-gi-Czm">
+            <objects>
+                <windowController storyboardIdentifier="detect_qr_window" id="Hv9-Ej-pNY" sceneMemberID="viewController">
+                    <window key="window" identifier="detect_qr" title="识别二维码" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="dnR-dE-rI8">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+                    </window>
+                    <connections>
+                        <segue destination="dOK-EK-4VQ" kind="relationship" relationship="window.shadowedContentViewController" id="1R6-uq-dqd"/>
+                    </connections>
+                </windowController>
+                <customObject id="9B5-Qb-GgN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="934"/>
         </scene>
         <!--Detect QR-->
         <scene sceneID="L9F-Yl-5Qv">
@@ -1024,7 +1051,97 @@
                 </viewController>
                 <customObject id="YEe-Ey-jdT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="1023"/>
+            <point key="canvasLocation" x="1488" y="949"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="u5u-IF-0h9">
+            <objects>
+                <windowController storyboardIdentifier="color_picker" id="rn5-BI-d1K" sceneMemberID="viewController">
+                    <window key="window" title="取色器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FlT-to-RsW">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="gOG-xX-pTC" kind="relationship" relationship="window.shadowedContentViewController" id="uXa-x0-doT"/>
+                    </connections>
+                </windowController>
+                <customObject id="MIE-Hj-cjK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="1325"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="QNv-PB-La3">
+            <objects>
+                <viewController id="gOG-xX-pTC" customClass="ColorPickerViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="a9e-rb-XRP">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-be-opR">
+                                <rect key="frame" x="121" y="113" width="124" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeColorAction:" target="gOG-xX-pTC" id="1NS-cR-xJI"/>
+                                </connections>
+                            </colorWell>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-q9-mR6">
+                                <rect key="frame" x="264" y="156" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="mgI-VW-QTX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLh-Ks-waH">
+                                <rect key="frame" x="313" y="118" width="47" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Vex-x4-6m8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hx-er-Pxa">
+                                <rect key="frame" x="262" y="121" width="43" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alpha:" id="pvp-bp-eqI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="alphaTextField" destination="uLh-Ks-waH" id="hyd-lw-RT1"/>
+                        <outlet property="colorTextField" destination="9F2-q9-mR6" id="pU5-W3-uzI"/>
+                    </connections>
+                </viewController>
+                <customObject id="9xg-Tt-Ddo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840" y="1172"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="Bte-87-RS5">
+            <objects>
+                <windowController storyboardIdentifier="encode_window" id="5wM-lt-dCs" sceneMemberID="viewController">
+                    <window key="window" identifier="encode" title="编码" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ddx-qd-sbZ">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+                    </window>
+                    <connections>
+                        <segue destination="FuB-iT-90z" kind="relationship" relationship="window.shadowedContentViewController" id="x71-Yt-ebY"/>
+                    </connections>
+                </windowController>
+                <customObject id="InY-AM-rz1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="862"/>
         </scene>
         <!--编码-->
         <scene sceneID="TWv-5T-ylc">
@@ -1162,7 +1279,7 @@
                 </viewController>
                 <customObject id="DY6-NS-Xm4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="985"/>
+            <point key="canvasLocation" x="70" y="1183"/>
         </scene>
     </scenes>
 </document>

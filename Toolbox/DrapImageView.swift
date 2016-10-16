@@ -16,7 +16,6 @@ class DragImageView: NSImageView {
         drapPosition.x -= 16
         drapPosition.y -= 16
         let imageLocation = NSRect(origin: drapPosition, size: NSSize(width: 32, height: 32))
-        let tt = CGRect(x: 16, y: 16, width: 32, height: 32)
         if self.image != nil {
             self.dragPromisedFiles(ofTypes: ["png"], from: imageLocation, source: self, slideBack: true, event: event)
         }
