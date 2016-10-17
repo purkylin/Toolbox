@@ -50,6 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "取色器", action: #selector(colorMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "偏好设置", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Crack", action: #selector(crackMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "关于", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "退出", action: #selector(quitMenuItemClicked(sender:)), keyEquivalent: ""))
@@ -90,6 +91,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func aboutMenuItemClicked(sender: AnyObject) {
         aboutWindowController.showWindow(nil)
+    }
+    
+    func crackMenuItemClicked(sender: AnyObject) {
+        let storyboard = NSStoryboard(name: "Main",bundle: nil)
+        let windowController = storyboard.instantiateController(withIdentifier: "crack") as! NSWindowController
+        windowController.showWindow(nil)
+        self.windowController = windowController
     }
     
     func quitMenuItemClicked(sender: AnyObject) {

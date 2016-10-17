@@ -11,6 +11,10 @@
 		312A33DB1DAA851D00FAEBBE /* DetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */; };
 		3178CE011DB33E6A00AFA2BA /* DrapImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */; };
 		3178CE031DB35E6300AFA2BA /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE021DB35E6300AFA2BA /* ColorPickerViewController.swift */; };
+		3178CE0A1DB36E1C00AFA2BA /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3178CE071DB36E1C00AFA2BA /* MASPreferencesWindow.xib */; };
+		3178CE0B1DB36E1C00AFA2BA /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE091DB36E1C00AFA2BA /* MASPreferencesWindowController.m */; };
+		3178CE0F1DB3A1F700AFA2BA /* DragFilenameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE0E1DB3A1F700AFA2BA /* DragFilenameImageView.swift */; };
+		3178CE111DB3A2D200AFA2BA /* CrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178CE101DB3A2D200AFA2BA /* CrackViewController.swift */; };
 		319B033A1D9DDAB90006437A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B03391D9DDAB90006437A /* AppDelegate.swift */; };
 		319B033C1D9DDAB90006437A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B033B1D9DDAB90006437A /* ViewController.swift */; };
 		319B033E1D9DDAB90006437A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319B033D1D9DDAB90006437A /* Assets.xcassets */; };
@@ -27,6 +31,13 @@
 		312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectViewController.swift; sourceTree = "<group>"; };
 		3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrapImageView.swift; sourceTree = "<group>"; };
 		3178CE021DB35E6300AFA2BA /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		3178CE051DB36E1C00AFA2BA /* MASPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferences.h; sourceTree = "<group>"; };
+		3178CE061DB36E1C00AFA2BA /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		3178CE071DB36E1C00AFA2BA /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		3178CE081DB36E1C00AFA2BA /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		3178CE091DB36E1C00AFA2BA /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		3178CE0E1DB3A1F700AFA2BA /* DragFilenameImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragFilenameImageView.swift; sourceTree = "<group>"; };
+		3178CE101DB3A2D200AFA2BA /* CrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrackViewController.swift; sourceTree = "<group>"; };
 		319B03361D9DDAB90006437A /* Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toolbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319B03391D9DDAB90006437A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319B033B1D9DDAB90006437A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +67,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3178CE041DB36E1C00AFA2BA /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				3178CE051DB36E1C00AFA2BA /* MASPreferences.h */,
+				3178CE061DB36E1C00AFA2BA /* MASPreferencesViewController.h */,
+				3178CE071DB36E1C00AFA2BA /* MASPreferencesWindow.xib */,
+				3178CE081DB36E1C00AFA2BA /* MASPreferencesWindowController.h */,
+				3178CE091DB36E1C00AFA2BA /* MASPreferencesWindowController.m */,
+			);
+			path = MASPreferences;
+			sourceTree = "<group>";
+		};
 		319B032D1D9DDAB90006437A = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +107,8 @@
 				31DBAC101DA8EBCA001B162C /* GCDAsyncSocket.h */,
 				31DBAC111DA8EBCA001B162C /* GCDAsyncSocket.m */,
 				319B033F1D9DDAB90006437A /* Main.storyboard */,
+				3178CE101DB3A2D200AFA2BA /* CrackViewController.swift */,
+				3178CE0E1DB3A1F700AFA2BA /* DragFilenameImageView.swift */,
 				3178CE021DB35E6300AFA2BA /* ColorPickerViewController.swift */,
 				3178CE001DB33E6A00AFA2BA /* DrapImageView.swift */,
 				312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */,
@@ -92,6 +117,7 @@
 				319B03491D9DED1A0006437A /* WindowController.swift */,
 				319B03421D9DDAB90006437A /* Info.plist */,
 				31DBAC0F1DA8EBC9001B162C /* Toolbox-Bridging-Header.h */,
+				3178CE041DB36E1C00AFA2BA /* MASPreferences */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -177,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3178CE0A1DB36E1C00AFA2BA /* MASPreferencesWindow.xib in Resources */,
 				311E78141DACDEDD00A3E646 /* terminal.script in Resources */,
 				319B033E1D9DDAB90006437A /* Assets.xcassets in Resources */,
 				319B03411D9DDAB90006437A /* Main.storyboard in Resources */,
@@ -243,10 +270,13 @@
 				3178CE031DB35E6300AFA2BA /* ColorPickerViewController.swift in Sources */,
 				319B034C1D9E17450006437A /* BarcodeViewController.swift in Sources */,
 				3178CE011DB33E6A00AFA2BA /* DrapImageView.swift in Sources */,
+				3178CE0F1DB3A1F700AFA2BA /* DragFilenameImageView.swift in Sources */,
 				312A33DB1DAA851D00FAEBBE /* DetectViewController.swift in Sources */,
 				319B034F1D9F48440006437A /* UrlEncodeViewController.swift in Sources */,
 				319B034A1D9DED1A0006437A /* WindowController.swift in Sources */,
+				3178CE0B1DB36E1C00AFA2BA /* MASPreferencesWindowController.m in Sources */,
 				319B033A1D9DDAB90006437A /* AppDelegate.swift in Sources */,
+				3178CE111DB3A2D200AFA2BA /* CrackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
