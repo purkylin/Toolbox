@@ -24,7 +24,7 @@ class ColorPickerViewController: NSViewController {
         let r = Int(sender.color.redComponent * 255)
         let g = Int(sender.color.greenComponent * 255)
         let b = Int(sender.color.blueComponent * 255)
-        let s = String(format: "#%2X%2X%2X", r, g, b)
+        let s = String(format: "#%02X%02X%02X", r, g, b)
         colorTextField.stringValue = s
         
         let alpha = sender.color.alphaComponent
