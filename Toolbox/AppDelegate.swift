@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "编码", action: #selector(encodeMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "取色器", action: #selector(colorMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "偏好设置", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "偏好设置", action: nil, keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Crack", action: #selector(crackMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "关于", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -71,15 +71,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func encodeMenuItemClicked(sender: AnyObject) {
         encodeWindowController?.showWindow(nil)
+        encodeWindowController?.window?.orderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+
         //        NSApp.activate(ignoringOtherApps: true) // bring frontmost of any app
     }
     
     func qrMenuItemClicked(sender: AnyObject) {
         generateWindowController?.showWindow(nil)
+        generateWindowController?.window?.orderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func detectMenuItemClicked(sender: AnyObject) {
         detectWindowController?.showWindow(nil)
+        detectWindowController?.window?.orderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func colorMenuItemClicked(sender: AnyObject) {
@@ -87,17 +94,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let windowController = storyboard.instantiateController(withIdentifier: "color_picker") as! NSWindowController
         windowController.showWindow(nil)
         self.windowController = windowController
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func aboutMenuItemClicked(sender: AnyObject) {
         aboutWindowController.showWindow(nil)
+        aboutWindowController.window?.orderFront(nil)
     }
     
     func crackMenuItemClicked(sender: AnyObject) {
         let storyboard = NSStoryboard(name: "Main",bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: "crack") as! NSWindowController
         windowController.showWindow(nil)
+        windowController.window?.orderFront(nil)
         self.windowController = windowController
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func quitMenuItemClicked(sender: AnyObject) {
