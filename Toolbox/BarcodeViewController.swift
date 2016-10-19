@@ -66,17 +66,49 @@ class BarcodeViewController: NSViewController, NSMenuDelegate {
         }
     }
     
+    func maxDataLength(level: QRCorrectLevel) -> Int {
+        switch level {
+        case .L:
+            return 2953
+        case .M:
+            return 2331
+        case .Q:
+            return 1663
+        case .H:
+            return 1273
+        }
+    }
+    
     func generatorQRCode(_ content: String, level: QRCorrectLevel,centerImage: NSImage?) -> NSImage? {
         if content.isEmpty {
             return nil
         }
         
+//        * http://en.wikipedia.org/wiki/QR_code
+//        
+//        Numeric only    Max. 7,089 characters (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+//        Alphanumeric    Max. 4,296 characters (0–9, A–Z [upper-case only], space, $, %, *, +, -, ., /, :)
+//        Binary/byte     Max. 2,953 characters (8-bit bytes) (23624 bits)
+//        Kanji/Kana  Max. 1,817 characters
+        
         let filter = CIFilter(name: "CIQRCodeGenerator")
         let data = content.data(using: String.Encoding.utf8)
+        if data!.count > maxDataLength(level: correctLevel) {
+            let alert = NSAlert()
+            alert.messageText = "数据太长,请截断,当前数据长度\(data!.count), 最大长度\(maxDataLength(level: correctLevel)), 一个汉字占3字节, 一个字符占1字节"
+            alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+            return nil
+        }
+        
         filter?.setValue(data, forKey: "inputMessage")
         filter?.setValue(level.rawValue, forKey: "inputCorrectionLevel") // 设置滤镜的纠错率
         
         var output = filter?.outputImage
+        if output == nil {
+            print("Generate qr failed")
+            return nil
+        }
+        
         let transform = CGAffineTransform(scaleX: 20, y: 20)
         output = output?.applying(transform)
         

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Security
 
 class CrackViewController: NSViewController {
     @IBOutlet var pathTextField: NSTextField!
@@ -37,4 +38,6 @@ class CrackViewController: NSViewController {
     
     @IBAction func resignAction(_ sender: AnyObject) {
     }
+    
+
 }
