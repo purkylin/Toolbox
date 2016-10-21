@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 保存到Finder
 class DragImageView: NSImageView {
     
     override func mouseDown(with event: NSEvent) {

@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 拖拽Finder中任意文件
 class DragFilenameImageView: NSImageView {
     weak var delegate: AnyObject!
     var dragFinished: ((String) -> Void)?

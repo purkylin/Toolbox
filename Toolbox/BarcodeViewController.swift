@@ -17,6 +17,7 @@ enum QRCorrectLevel: String {
 
 let maxHistoryCount = 10
 let maxHistoryItemCharsCount = 10
+let debugScheme = "#~!%^&#debug#~!%^&#://"
 
 class BarcodeViewController: NSViewController, NSMenuDelegate {
     var correctLevel: QRCorrectLevel = .L
@@ -27,6 +28,8 @@ class BarcodeViewController: NSViewController, NSMenuDelegate {
     @IBOutlet weak var historyPopUpButton: NSPopUpButton!
 
     dynamic var extendViewHidden = true
+    
+    dynamic var enableDebugScheme = false
     
     var history = [String]()
     
@@ -91,8 +94,10 @@ class BarcodeViewController: NSViewController, NSMenuDelegate {
 //        Binary/byte     Max. 2,953 characters (8-bit bytes) (23624 bits)
 //        Kanji/Kana  Max. 1,817 characters
         
+        let _content = enableDebugScheme ? (debugScheme + content) : content
+        
         let filter = CIFilter(name: "CIQRCodeGenerator")
-        let data = content.data(using: String.Encoding.utf8)
+        let data = _content.data(using: String.Encoding.utf8)
         if data!.count > maxDataLength(level: correctLevel) {
             let alert = NSAlert()
             alert.messageText = "数据太长,请截断,当前数据长度\(data!.count), 最大长度\(maxDataLength(level: correctLevel)), 一个汉字占3字节, 一个字符占1字节"

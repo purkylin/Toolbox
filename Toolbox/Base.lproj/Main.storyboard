@@ -949,6 +949,17 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-g8-KhU">
+                                <rect key="frame" x="106" y="29" width="114" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Debug scheme" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Pct-uj-qfj">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="8Li-pw-4vj" name="value" keyPath="self.enableDebugScheme" id="QCl-rK-WKc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="XUe-Kl-vfK" firstAttribute="top" secondItem="Cgs-IE-mPH" secondAttribute="bottom" constant="12" id="94y-Dy-NAv"/>
