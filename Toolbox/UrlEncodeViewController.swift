@@ -36,7 +36,7 @@ class UrlEncodeViewController: NSViewController {
                     if enableComposent {
                         postText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                     } else {
-                        postText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+                        postText = text.addingPercentEncodingForFormData()
                     }
                 }
             case 1:
@@ -89,4 +89,32 @@ extension String {
         
         return String(format: hash as String)
     }
+    
+    func addingPercentEncodingForRFC3986() -> String? {
+        // ALPHA / DIGIT / “-” / “.” / “_” / “~”
+        let unreserved = "-._~/?"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        return addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
+    }
+    
+    public func addingPercentEncodingForFormData(plusForSpace: Bool=false) -> String? {
+        // ALPHA / DIGIT / “*” / “-” / “.” / “_”
+        let unreserved = "*-._"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        
+        if plusForSpace {
+            allowed.addCharacters(in: " ")
+        }
+        
+        
+        var encoded = addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
+        if plusForSpace {
+            encoded?.replacingOccurrences(of: " ", with: "+")
+        }
+        return encoded
+    }
+    
+    
 }
