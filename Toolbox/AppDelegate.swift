@@ -8,6 +8,7 @@
 
 import Cocoa
 import PFAboutWindow
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -119,6 +120,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let cmd = "tell application \"Terminal\"\n    activate\n    tell application \"System Events\" to keystroke \"n\" using {command down}\nend tell\n"
         let script = NSAppleScript(source: cmd)
         script?.executeAndReturnError(nil)
+    }
+    
+    func setupLaunchItem() {
+        let defaults = UserDefaults.standard
+        let enable = defaults.bool(forKey: "AutoLaunch")
+        
+        if !enable {
+            if (SMLoginItemSetEnabled("com.purkylin.LaunchHelper" as CFString, true)) {
+                print("Setting auto launch success")
+            } else {
+                print("Settting auto launch failed")
+            }
+        }
+
     }
 }
 
