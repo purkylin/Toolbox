@@ -11,18 +11,16 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        let mainIdentifier = "com.purkylin.LaunchHelper"
+        let mainIdentifier = "com.purkylin.Toolbox"
         let running = NSWorkspace.shared().runningApplications.filter { (app) -> Bool in
             return app.bundleIdentifier == mainIdentifier
         }
         
         let alreadyRunning = running.count > 0
         
-        if alreadyRunning {
+        if !alreadyRunning {
             let path = Bundle.main.bundlePath as NSString
             var components = path.pathComponents
             components.removeLast()
@@ -31,8 +29,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             
             let appPath = NSString.path(withComponents: components)
-            print("a--------b")
-            print(appPath)
             NSWorkspace.shared().launchApplication(appPath)
             NSApp.terminate(nil)
         }

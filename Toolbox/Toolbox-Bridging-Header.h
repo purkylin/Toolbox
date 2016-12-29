@@ -5,3 +5,4 @@
 #import "GCDAsyncSocket.h"
 #import <PFAboutWindow/PFAboutWindowController.h>
 #import <CommonCrypto/CommonDigest.h>
+#import "SudoHelper.h"

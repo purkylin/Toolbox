@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -687,45 +687,6 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--工具箱-->
-        <scene sceneID="hIz-AP-VOD">
-            <objects>
-                <viewController title="工具箱" id="XfG-lQ-9wD" customClass="ViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Kp-Lg2">
-                                <rect key="frame" x="76" y="77" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hpW-hb-oQF">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTf-4O-0pF">
-                                <rect key="frame" x="193" y="77" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Barcode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R99-Qx-kvY">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-Ri-r8Z">
-                                <rect key="frame" x="305" y="77" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Detect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0ZN-iO-iUB">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="70" y="466"/>
-        </scene>
         <!--Window Controller-->
         <scene sceneID="6kz-TB-J9W">
             <objects>
@@ -742,7 +703,54 @@
                 </windowController>
                 <customObject id="dhC-gC-d1S" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="241"/>
+            <point key="canvasLocation" x="631" y="250"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="QUf-WA-d3i">
+            <objects>
+                <windowController storyboardIdentifier="preference" id="x0d-v3-cyO" sceneMemberID="viewController">
+                    <window key="window" title="偏好设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="taB-KU-qpR">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                    </window>
+                    <connections>
+                        <segue destination="ei7-2B-ejq" kind="relationship" relationship="window.shadowedContentViewController" id="tq7-Bz-qOC"/>
+                    </connections>
+                </windowController>
+                <customObject id="OOk-De-DpQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="225"/>
+        </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="zEN-kr-ss9">
+            <objects>
+                <viewController id="ei7-2B-ejq" customClass="PreferenceViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="S4Y-bK-U56">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3x7-sD-gAy">
+                                <rect key="frame" x="44" y="211" width="89" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="开机自启动" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mhd-NQ-h6w">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btnAutoLaunchClicked:" target="ei7-2B-ejq" id="K6X-Tl-XNj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="autoLaunchBtn" destination="3x7-sD-gAy" id="f2m-wp-YBZ"/>
+                    </connections>
+                </viewController>
+                <customObject id="fXY-dh-Xtk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685" y="208"/>
         </scene>
         <!--生成二维码-->
         <scene sceneID="FjN-Rn-X2U">
@@ -983,7 +991,7 @@
                     <font key="font" metaFont="smallSystem"/>
                 </levelIndicatorCell>
             </objects>
-            <point key="canvasLocation" x="1085" y="573"/>
+            <point key="canvasLocation" x="684" y="642"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="aOr-gi-Czm">
@@ -1001,7 +1009,7 @@
                 </windowController>
                 <customObject id="9B5-Qb-GgN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="934"/>
+            <point key="canvasLocation" x="619" y="1014"/>
         </scene>
         <!--Detect QR-->
         <scene sceneID="L9F-Yl-5Qv">
@@ -1063,7 +1071,7 @@
                 </viewController>
                 <customObject id="YEe-Ey-jdT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488" y="949"/>
+            <point key="canvasLocation" x="1145" y="1005"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="u5u-IF-0h9">
@@ -1081,7 +1089,7 @@
                 </windowController>
                 <customObject id="MIE-Hj-cjK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="1325"/>
+            <point key="canvasLocation" x="619" y="1408"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="G2m-rT-LQh">
@@ -1099,7 +1107,7 @@
                 </windowController>
                 <customObject id="Itb-Im-Yg7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="1883"/>
+            <point key="canvasLocation" x="612" y="1807"/>
         </scene>
         <!--Crack View Controller-->
         <scene sceneID="zWd-vR-2zN">
@@ -1155,7 +1163,72 @@
                 </viewController>
                 <customObject id="alg-X4-qAG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="2188"/>
+            <point key="canvasLocation" x="612" y="2112"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="GFM-IS-bup">
+            <objects>
+                <windowController storyboardIdentifier="network" id="2ac-ay-HOM" sceneMemberID="viewController">
+                    <window key="window" title="网络设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="rZi-h1-GLw">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                    </window>
+                    <connections>
+                        <segue destination="4Ib-Yr-Xoh" kind="relationship" relationship="window.shadowedContentViewController" id="2ST-Jw-m66"/>
+                    </connections>
+                </windowController>
+                <customObject id="8Si-8d-V1d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="2487"/>
+        </scene>
+        <!--Network View Controller-->
+        <scene sceneID="VEx-6k-oNN">
+            <objects>
+                <viewController id="4Ib-Yr-Xoh" customClass="NetworkViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="aF3-hs-vgS">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="med-Fj-DvG">
+                                <rect key="frame" x="121" y="154" width="48" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DNS" id="DU4-cT-CjL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sf8-t4-ZqV">
+                                <rect key="frame" x="162" y="147" width="199" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="xAD-MK-Raf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="AGu-by-zp8"/>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IB2-ec-5yy">
+                                <rect key="frame" x="203" y="102" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UJY-OP-CnH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btnApplyClicked:" target="4Ib-Yr-Xoh" id="hSL-yG-cn4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="dnsPopupButton" destination="Sf8-t4-ZqV" id="6uT-sS-P7A"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ngo-bp-SuY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="2487"/>
         </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="QNv-PB-La3">
@@ -1209,7 +1282,7 @@
                 </viewController>
                 <customObject id="9xg-Tt-Ddo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840" y="1172"/>
+            <point key="canvasLocation" x="1160" y="1393"/>
         </scene>
         <!--General-->
         <scene sceneID="iyO-zw-zsl">
@@ -1251,7 +1324,7 @@
                 </viewController>
                 <customObject id="zaf-4Q-Kqt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653" y="1716"/>
+            <point key="canvasLocation" x="1145" y="1794"/>
         </scene>
         <!--图床-->
         <scene sceneID="b5q-0O-CYD">
@@ -1338,7 +1411,7 @@
                 </viewController>
                 <customObject id="n2n-jQ-rmd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="2066"/>
+            <point key="canvasLocation" x="1150" y="2144"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Bte-87-RS5">
@@ -1356,7 +1429,7 @@
                 </windowController>
                 <customObject id="InY-AM-rz1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="862"/>
+            <point key="canvasLocation" x="75" y="642"/>
         </scene>
         <!--编码-->
         <scene sceneID="TWv-5T-ylc">
@@ -1494,7 +1567,7 @@
                 </viewController>
                 <customObject id="DY6-NS-Xm4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1183"/>
+            <point key="canvasLocation" x="74" y="990"/>
         </scene>
     </scenes>
 </document>

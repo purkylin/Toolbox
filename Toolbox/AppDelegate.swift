@@ -35,6 +35,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         configMenu()
+        
+        if #available(OSX 10.12, *) {
+            NSWindow.allowsAutomaticWindowTabbing = true
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "records")
+        defaults.synchronize()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -49,9 +59,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "识别二维码", action: #selector(detectMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "编码", action: #selector(encodeMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "取色器", action: #selector(colorMenuItemClicked(sender:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "网络设置", action: #selector(networkMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "偏好设置", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Crack", action: #selector(crackMenuItemClicked(sender:)), keyEquivalent: ""))
+        
+        let autoLaunchMenuItem = NSMenuItem(title: "开机启动", action: #selector(autoLaunchMenuItemClicked(sender:)), keyEquivalent: "")
+        menu.addItem(autoLaunchMenuItem)
+        let defaults = UserDefaults.standard
+        autoLaunchMenuItem.state = defaults.integer(forKey: "AutoLaunch")
+    
+//        menu.addItem(NSMenuItem(title: "偏好设置", action: #selector(preferenceMenuItelClicked(sender:)), keyEquivalent: ""))
+//        menu.addItem(NSMenuItem(title: "Crack", action: #selector(crackMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "关于", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "退出", action: #selector(quitMenuItemClicked(sender:)), keyEquivalent: ""))
@@ -103,9 +120,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         aboutWindowController.window?.orderFront(nil)
     }
     
+    func autoLaunchMenuItemClicked(sender: AnyObject) {
+        if let item = sender as? NSMenuItem {
+            item.state = item.state == NSOnState ? NSOffState : NSOnState
+            
+            if (SMLoginItemSetEnabled("com.purkylin.LaunchHelper" as CFString, sender.state == NSOnState)) {
+                UserDefaults.standard.setValue(item.state, forKey: "AutoLaunch")
+                UserDefaults.standard.synchronize()
+                print("Setting success \(item.state)")
+            } else {
+                print("Setting failed")
+            }
+        }
+    }
+    
     func crackMenuItemClicked(sender: AnyObject) {
         let storyboard = NSStoryboard(name: "Main",bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: "crack") as! NSWindowController
+        windowController.showWindow(nil)
+        windowController.window?.orderFront(nil)
+        self.windowController = windowController
+        NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    func networkMenuItemClicked(sender: AnyObject) {
+        let storyboard = NSStoryboard(name: "Main",bundle: nil)
+        let windowController = storyboard.instantiateController(withIdentifier: "network") as! NSWindowController
         windowController.showWindow(nil)
         windowController.window?.orderFront(nil)
         self.windowController = windowController
@@ -120,6 +160,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let cmd = "tell application \"Terminal\"\n    activate\n    tell application \"System Events\" to keystroke \"n\" using {command down}\nend tell\n"
         let script = NSAppleScript(source: cmd)
         script?.executeAndReturnError(nil)
+    }
+    
+    func preferenceMenuItelClicked(sender: AnyObject) {
+        let storyboard = NSStoryboard(name: "Main",bundle: nil)
+        let windowController = storyboard.instantiateController(withIdentifier: "preference") as! NSWindowController
+        windowController.showWindow(nil)
+        windowController.window?.orderFront(nil)
+        self.windowController = windowController
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     func setupLaunchItem() {
