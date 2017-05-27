@@ -60,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "编码", action: #selector(encodeMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "取色器", action: #selector(colorMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "网络设置", action: #selector(networkMenuItemClicked(sender:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "还原短链接", action: #selector(recoverUrlMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
         let autoLaunchMenuItem = NSMenuItem(title: "开机启动", action: #selector(autoLaunchMenuItemClicked(sender:)), keyEquivalent: "")
@@ -144,6 +145,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.windowController = windowController
         NSApp.activate(ignoringOtherApps: true)
     }
+    
+    func recoverUrlMenuItemClicked(sender: AnyObject) {
+        // TODO
+    }
+    
     
     func quitMenuItemClicked(sender: AnyObject) {
         NSApp.terminate(nil)
