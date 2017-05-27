@@ -766,6 +766,7 @@
 				0D1419851E0F6C6C00E6C8B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3155784A1E0D20A200135A73 /* Build configuration list for PBXNativeTarget "LaunchHelper" */ = {
 			isa = XCConfigurationList;

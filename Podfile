@@ -5,6 +5,6 @@ use_frameworks!
 
 target 'Toolbox' do
 #pod 'TRexAboutWindowController'
-pod 'PFAboutWindow', :git => 'https://github.com/perfaram/PFAboutWindow.git'
+#pod 'PFAboutWindow', :git => 'https://github.com/perfaram/PFAboutWindow.git'
 end
 

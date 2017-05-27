@@ -108,13 +108,10 @@ extension String {
             allowed.addCharacters(in: " ")
         }
         
-        
         var encoded = addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
         if plusForSpace {
-            encoded?.replacingOccurrences(of: " ", with: "+")
+            encoded = encoded?.replacingOccurrences(of: " ", with: "+")
         }
         return encoded
     }
-    
-    
 }

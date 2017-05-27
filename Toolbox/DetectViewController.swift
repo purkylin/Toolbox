@@ -41,7 +41,7 @@ class DetectViewController: NSViewController {
         var results = [String]()
         let features = detector?.features(in: ciImage!)
         for feature in features as! [CIQRCodeFeature] {
-            print(feature.messageString)
+//            print(feature.messageString)
             results.append(feature.messageString!)
         }
         return results

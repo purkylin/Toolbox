@@ -80,19 +80,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func configAbout() {
-        aboutWindowController.appURL = URL(string: "https://purkylin.com")!
-        aboutWindowController.appCopyright = NSAttributedString(string: "Purkylin King", attributes: [NSForegroundColorAttributeName : NSColor.tertiaryLabelColor, NSFontAttributeName : NSFont(name: "HelveticaNeue", size: 11)])
-        aboutWindowController.appName = "Toolbox"
-        aboutWindowController.appCredits = NSAttributedString(string: "Thanks to liuxiaolong, liupeng")
-//        aboutWindowController.textShown = NSAttributedString(string: "感谢：liuxiaolong, liupeng")
+
     }
     
     func encodeMenuItemClicked(sender: AnyObject) {
         encodeWindowController?.showWindow(nil)
         encodeWindowController?.window?.orderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
-
-        //        NSApp.activate(ignoringOtherApps: true) // bring frontmost of any app
     }
     
     func qrMenuItemClicked(sender: AnyObject) {
@@ -116,8 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func aboutMenuItemClicked(sender: AnyObject) {
-        aboutWindowController.showWindow(nil)
-        aboutWindowController.window?.orderFront(nil)
+        NSApp.orderFrontStandardAboutPanel(nil)
     }
     
     func autoLaunchMenuItemClicked(sender: AnyObject) {
