@@ -9,6 +9,8 @@
 import Cocoa
 import PFAboutWindow
 import ServiceManagement
+import Alamofire
+import SwiftyJSON
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -45,6 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "records")
         defaults.synchronize()
+        
+        NSUserNotificationCenter.default.delegate = self
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -80,10 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem = statusItem
     }
     
-    func configAbout() {
-
-    }
-    
+    // MARK - Actions
     func encodeMenuItemClicked(sender: AnyObject) {
         encodeWindowController?.showWindow(nil)
         encodeWindowController?.window?.orderFront(nil)
@@ -147,9 +148,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func recoverUrlMenuItemClicked(sender: AnyObject) {
-        // TODO
+        let pboard = NSPasteboard.general()
+        if pboard.canReadItem(withDataConformingToTypes: [NSPasteboardTypeString]) {
+            guard let data = pboard.data(forType: NSPasteboardTypeString) else {
+                return
+            }
+            
+            guard let raw = String(data: data, encoding: .utf8), raw.characters.count > 0 else {
+                return
+            }
+            
+            guard let url = URL(string: raw) else {
+                return
+            }
+            
+            Alamofire.request("http://purkylin.com/api/recover_link", method: .post, parameters: ["url" : url]).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    if json["status"].intValue == 0 {
+                        let result = json["url"].stringValue
+                        sendRecoverLinkNotification(success: true, url: result, originalUrl: raw)
+                    } else {
+                        sendRecoverLinkNotification(success: false, url: nil, originalUrl: raw)
+                        print(json["message"].stringValue)
+                    }
+                case .failure(let error):
+                    sendRecoverLinkNotification(success: false, url: nil, originalUrl: raw)
+                    print(error)
+                }
+            }
+        }
     }
-    
     
     func quitMenuItemClicked(sender: AnyObject) {
         NSApp.terminate(nil)
@@ -170,6 +200,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
     
+    // MARK - Others
+    
     func setupLaunchItem() {
         let defaults = UserDefaults.standard
         let enable = defaults.bool(forKey: "AutoLaunch")
@@ -181,7 +213,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print("Settting auto launch failed")
             }
         }
+    }
+}
 
+extension AppDelegate: NSUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
+        if let str = notification.userInfo?["url"] as? String {
+            if let url = URL(string: str) {
+                NSWorkspace.shared().open(url)
+            }
+        }
     }
 }
 

@@ -1,6 +1,0 @@
-framework module PFAboutWindow {
-  umbrella header "PFAboutWindow-umbrella.h"
-
-  export *
-  module * { export * }
-}
