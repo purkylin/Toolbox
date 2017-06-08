@@ -7,12 +7,17 @@
 		<key>HelperTool.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
 		</dict>
 		<key>LaunchHelper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>Toolbox copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Toolbox.xcscheme</key>
 		<dict>
@@ -23,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0D14197E1E0F6C6C00E6C8B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0DE1E0A21EE8FD0800265869</key>
 		<dict>
 			<key>primary</key>
 			<true/>

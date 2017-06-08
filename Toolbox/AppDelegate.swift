@@ -7,10 +7,10 @@
 //
 
 import Cocoa
-import PFAboutWindow
 import ServiceManagement
 import Alamofire
 import SwiftyJSON
+import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,8 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var mainController: NSWindowController!
     
     var windowController: NSWindowController!
-    
-    var aboutWindowController = PFAboutWindowController()
     
     lazy var generateWindowController: NSWindowController? = {
         return NSStoryboard(name: "Main",bundle: nil).instantiateController(withIdentifier: "generate_qr_window") as? NSWindowController
@@ -49,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.synchronize()
         
         NSUserNotificationCenter.default.delegate = self
+        SUUpdater.shared().checkForUpdatesInBackground()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -74,6 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 //        menu.addItem(NSMenuItem(title: "偏好设置", action: #selector(preferenceMenuItelClicked(sender:)), keyEquivalent: ""))
 //        menu.addItem(NSMenuItem(title: "Crack", action: #selector(crackMenuItemClicked(sender:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Check for Updates...", action: #selector(updateMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "关于", action: #selector(aboutMenuItemClicked(sender:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "退出", action: #selector(quitMenuItemClicked(sender:)), keyEquivalent: ""))
@@ -198,6 +198,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowController.window?.orderFront(nil)
         self.windowController = windowController
         NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    func updateMenuItemClicked(sender: AnyObject) {
+        SUUpdater.shared().checkForUpdates(sender)
     }
     
     // MARK - Others

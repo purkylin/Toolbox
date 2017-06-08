@@ -23,6 +23,9 @@
 		0D1419A71E0F6ECE00E6C8B6 /* com.purkylin.HelperTool in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D14197F1E0F6C6C00E6C8B6 /* com.purkylin.HelperTool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0D1419A91E115ECA00E6C8B6 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1419A81E115ECA00E6C8B6 /* NetworkViewController.swift */; };
 		0D982A3A1EDDA1D60093A68E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D982A391EDDA1D60093A68E /* Util.swift */; };
+		0DE1E09D1EE8F99E00265869 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1E09C1EE8F99E00265869 /* Sparkle.framework */; };
+		0DE1E09E1EE8F99E00265869 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1E09C1EE8F99E00265869 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DE1E0A11EE8FA5600265869 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 0DE1E0A01EE8FA5600265869 /* dsa_pub.pem */; };
 		1516140DEFAFBF585FE28720 /* Pods_Toolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F61567AB573255F53890270 /* Pods_Toolbox.framework */; };
 		311E78141DACDEDD00A3E646 /* terminal.script in Resources */ = {isa = PBXBuildFile; fileRef = 311E78131DACDD5C00A3E646 /* terminal.script */; };
 		312A33DB1DAA851D00FAEBBE /* DetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */; };
@@ -62,6 +65,17 @@
 			files = (
 				0D1419A71E0F6ECE00E6C8B6 /* com.purkylin.HelperTool in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DE1E09F1EE8F99F00265869 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0DE1E09E1EE8F99E00265869 /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		315578391E0D1FF800135A73 /* Embed XPC Services */ = {
@@ -104,6 +118,9 @@
 		0D1419A11E0F6D7E00E6C8B6 /* HelperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperTool.m; sourceTree = "<group>"; };
 		0D1419A81E115ECA00E6C8B6 /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		0D982A391EDDA1D60093A68E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		0DE1E09C1EE8F99E00265869 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		0DE1E0A01EE8FA5600265869 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		0DE1E0CF1EE8FD0800265869 /* Toolbox copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Toolbox copy-Info.plist"; path = "/Users/purkylinking/Work/Repos/Toolbox/Toolbox copy-Info.plist"; sourceTree = "<absolute>"; };
 		20FBF52FE2855068A3C8C820 /* Pods-Toolbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toolbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Toolbox/Pods-Toolbox.debug.xcconfig"; sourceTree = "<group>"; };
 		311E78131DACDD5C00A3E646 /* terminal.script */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = terminal.script; sourceTree = "<group>"; };
 		312A33DA1DAA851C00FAEBBE /* DetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +170,7 @@
 				0D1419791E0F6A4200E6C8B6 /* SecurityFoundation.framework in Frameworks */,
 				0D1419771E0F6A3400E6C8B6 /* ServiceManagement.framework in Frameworks */,
 				1516140DEFAFBF585FE28720 /* Pods_Toolbox.framework in Frameworks */,
+				0DE1E09D1EE8F99E00265869 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +223,7 @@
 				319B03371D9DDAB90006437A /* Products */,
 				E57FBA479CA12DB0B77F655D /* Frameworks */,
 				3C8825F610B01DBCA9DE75FE /* Pods */,
+				0DE1E0CF1EE8FD0800265869 /* Toolbox copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +256,7 @@
 				319B034B1D9E17450006437A /* BarcodeViewController.swift */,
 				319B03491D9DED1A0006437A /* WindowController.swift */,
 				319B03421D9DDAB90006437A /* Info.plist */,
+				0DE1E0A01EE8FA5600265869 /* dsa_pub.pem */,
 				31DBAC0F1DA8EBC9001B162C /* Toolbox-Bridging-Header.h */,
 				0D982A391EDDA1D60093A68E /* Util.swift */,
 			);
@@ -255,6 +275,7 @@
 		E57FBA479CA12DB0B77F655D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DE1E09C1EE8F99E00265869 /* Sparkle.framework */,
 				0D1419781E0F6A4200E6C8B6 /* SecurityFoundation.framework */,
 				0D1419761E0F6A3400E6C8B6 /* ServiceManagement.framework */,
 				7F61567AB573255F53890270 /* Pods_Toolbox.framework */,
@@ -312,6 +333,7 @@
 				0D1419A61E0F6EB000E6C8B6 /* CopyFiles */,
 				0750F10D746A553AEBA04431 /* [CP] Embed Pods Frameworks */,
 				BFDE71437DDCE9BA02F9C04A /* [CP] Copy Pods Resources */,
+				0DE1E09F1EE8F99F00265869 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -386,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE1E0A11EE8FA5600265869 /* dsa_pub.pem in Resources */,
 				0D1419A21E0F6D7E00E6C8B6 /* HelperTool-Info.plist in Resources */,
 				0D14199B1E0F6CF100E6C8B6 /* Common.strings in Resources */,
 				311E78141DACDEDD00A3E646 /* terminal.script in Resources */,
@@ -702,6 +725,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CS3P4Q373F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Toolbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -722,6 +749,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CS3P4Q373F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Toolbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

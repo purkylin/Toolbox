@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserActivityTypes</key>
-	<string>alert</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,27 +17,38 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>11</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016年 Purkylin King. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSUserActivityTypes</key>
+	<string>alert</string>
 	<key>SMPrivilegedExecutables</key>
 	<dict>
 		<key>com.purkylin.HelperTool</key>
-		<string>identifier &quot;com.purkylin.HelperTool&quot; and anchor apple generic and certificate leaf[subject.CN] = 0x4d616320446576656c6f7065723a20e69bb220e98791e5b1b120284648513447364a564a5829 and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		<string>identifier "com.purkylin.HelperTool" and anchor apple generic and certificate leaf[subject.CN] = 0x4d616320446576656c6f7065723a20e69bb220e98791e5b1b120284648513447364a564a5829 and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 	</dict>
+	<key>SUFeedURL</key>
+	<string>https://purkylin.com/appcast_toolbox.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>com.purkylin.HelperTool</key>
-	<string>identifier &quot;com.purkylin.HelperTool&quot; and anchor apple generic and certificate leaf[subject.CN] = &quot;Mac Developer: purkylin@gmail.com (K2WB492RBL)&quot; and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+	<string>identifier "com.purkylin.HelperTool" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: purkylin@gmail.com (K2WB492RBL)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 </dict>
 </plist>
